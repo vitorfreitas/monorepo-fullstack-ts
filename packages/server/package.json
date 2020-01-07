@@ -4,7 +4,7 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "nodemon --exec 'ts-node' src/index.ts",
     "lint": "eslint src/*.ts"
   },
   "dependencies": {
@@ -14,7 +14,9 @@
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-router": "^7.4.0",
+    "nodemon": "^2.0.2",
     "ts-node": "^8.5.4",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "winston": "^3.2.1"
   }
 }
