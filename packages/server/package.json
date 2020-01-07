@@ -4,9 +4,16 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "lint": "eslint src/*.ts"
   },
   "dependencies": {
+    "@entria/eslint-config-node": "1.0.0",
+    "@koa/cors": "^3.0.0",
+    "@types/koa": "^2.11.0",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-router": "^7.4.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.4"
   }

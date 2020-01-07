@@ -1,0 +1,3 @@
+{
+  "extends": ["@entria/eslint-config-node"]
+}
