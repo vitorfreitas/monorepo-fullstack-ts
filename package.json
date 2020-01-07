@@ -1,0 +1,11 @@
+{
+  "name": "entria",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "author": "Vitor Freitas <vitorldfreitas@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
+}
