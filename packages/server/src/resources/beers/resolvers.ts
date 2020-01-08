@@ -18,3 +18,17 @@ export const createBeer = async ctx => {
     }
   }
 }
+
+export const findBeers = async ctx => {
+  try {
+    const beers = await Beer.find()
+
+    ctx.body = { beers }
+  } catch (err) {
+    ctx.status = err.status || 500
+    ctx.body = {
+      error: err.message,
+      message: 'Error finding a new beer. Try again later'
+    }
+  }
+}
