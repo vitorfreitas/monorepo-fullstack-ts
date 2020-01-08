@@ -1,4 +1,5 @@
 export interface IBeer {
+  _id: string
   picture: string
   name: string
   category: string
