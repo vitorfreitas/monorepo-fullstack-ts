@@ -1,6 +1,12 @@
 import app from './app'
 import logger from './logger'
+import { connect } from './database'
+import { PORT } from './config'
 
-app.listen(3000, () => {
-  logger.info('Server is running...')
-})
+;(async () => {
+  await connect()
+
+  app.listen(PORT, () => {
+    logger.info('Server is running...')
+  })
+})()
