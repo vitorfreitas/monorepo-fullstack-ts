@@ -2,6 +2,10 @@ import { Schema, model } from 'mongoose'
 
 const BeerSchema = new Schema(
   {
+    picture: {
+      type: String,
+      required: true
+    },
     name: {
       type: String,
       required: true
