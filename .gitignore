@@ -1,2 +1,9 @@
 node_modules
+coverage
+build
+dist
 .env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
