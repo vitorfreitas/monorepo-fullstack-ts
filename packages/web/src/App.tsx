@@ -1,10 +1,12 @@
 import React, { Suspense } from 'react'
-import Root from './pages/Root'
+import PagesRouter from './pages'
+import GlobalStyles from './global'
 
 const App: React.FC = () => {
   return (
     <Suspense fallback="Loading...">
-      <Root />
+      <GlobalStyles />
+      <PagesRouter />
     </Suspense>
   )
 }
