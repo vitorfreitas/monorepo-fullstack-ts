@@ -48,3 +48,19 @@ export const updateBeer = async ctx => {
     }
   }
 }
+
+export const removeBeer = async ctx => {
+  try {
+    await Beer.findByIdAndRemove(ctx.params.id)
+
+    ctx.body = {
+      message: 'Beer successfully removed'
+    }
+  } catch (err) {
+    ctx.status = err.status || 500
+    ctx.body = {
+      error: err.message,
+      message: 'Error removing this beer. Try again later'
+    }
+  }
+}
