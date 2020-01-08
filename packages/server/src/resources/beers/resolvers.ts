@@ -28,7 +28,23 @@ export const findBeers = async ctx => {
     ctx.status = err.status || 500
     ctx.body = {
       error: err.message,
-      message: 'Error finding a new beer. Try again later'
+      message: 'Error finding beers. Try again later'
+    }
+  }
+}
+
+export const updateBeer = async ctx => {
+  try {
+    await Beer.findByIdAndUpdate(ctx.params.id, ctx.request.body)
+
+    ctx.body = {
+      message: 'Beer successfully updated'
+    }
+  } catch (err) {
+    ctx.status = err.status || 500
+    ctx.body = {
+      error: err.message,
+      message: 'Error updating this beer. Try again later'
     }
   }
 }

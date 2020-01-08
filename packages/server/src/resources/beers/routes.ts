@@ -1,5 +1,5 @@
 import * as Router from 'koa-router'
-import { createBeer, findBeers } from './resolvers'
+import { createBeer, findBeers, updateBeer } from './resolvers'
 
 const router = new Router({
   prefix: '/api'
@@ -7,5 +7,6 @@ const router = new Router({
 
 router.post('/beers', createBeer)
 router.get('/beers', findBeers)
+router.put('/beers/:id', updateBeer)
 
 export default router
