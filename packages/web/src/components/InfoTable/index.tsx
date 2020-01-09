@@ -23,19 +23,23 @@ interface Props {
 const InfoTable: React.FC<Props> = ({ fields, labels, dataSource }) => {
   return (
     <table>
-      <tr>
-        {fields.map(field => (
-          <TableHead>{labels[field]}</TableHead>
-        ))}
-      </tr>
-
-      {dataSource.map(data => (
+      <thead>
         <tr>
           {fields.map(field => (
-            <TableCell>{data[field]}</TableCell>
+            <TableHead>{labels[field]}</TableHead>
           ))}
         </tr>
-      ))}
+      </thead>
+
+      <tbody>
+        {dataSource.map(data => (
+          <tr>
+            {fields.map(field => (
+              <TableCell>{data[field]}</TableCell>
+            ))}
+          </tr>
+        ))}
+      </tbody>
     </table>
   )
 }
