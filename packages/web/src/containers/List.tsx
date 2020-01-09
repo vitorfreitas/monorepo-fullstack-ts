@@ -1,22 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IBeer } from '@entria/shared/interfaces/beer'
 import { useHistory } from 'react-router-dom'
-
-const Header = styled.header`
-  width: 100vw;
-  padding: 4.5rem 0;
-  display: flex;
-  align-items: center;
-  background: #f39c12;
-  justify-content: center;
-`
-
-const HeaderTitle = styled.h1`
-  color: #fff;
-  font-size: 4rem;
-  text-align: center;
-`
+import { IBeer } from '@entria/shared/interfaces/beer'
+import Header from 'components/Header'
 
 const BeersGrid = styled.ul`
   margin-top: 4rem;
@@ -46,9 +32,7 @@ const ListContainer: React.FC<Props> = ({ beers }) => {
 
   return (
     <article>
-      <Header>
-        <HeaderTitle>Lista de cervejas</HeaderTitle>
-      </Header>
+      <Header title="Lista de cervejas" />
 
       <section>
         <BeersGrid>

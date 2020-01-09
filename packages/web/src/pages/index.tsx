@@ -4,8 +4,12 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 const Root: React.FC = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" component={lazy(() => import('./List'))} />
-      <Route path="/details" component={() => <h1>Details</h1>} />
+      <Route path="/" exact component={lazy(() => import('./List'))} />
+      <Route
+        path="/details"
+        exact
+        component={lazy(() => import('./Details'))}
+      />
     </Switch>
   </BrowserRouter>
 )
