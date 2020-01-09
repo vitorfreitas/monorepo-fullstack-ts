@@ -26,16 +26,16 @@ const InfoTable: React.FC<Props> = ({ fields, labels, dataSource }) => {
       <thead>
         <tr>
           {fields.map(field => (
-            <TableHead>{labels[field]}</TableHead>
+            <TableHead key={field}>{labels[field]}</TableHead>
           ))}
         </tr>
       </thead>
 
       <tbody>
-        {dataSource.map(data => (
-          <tr>
+        {dataSource.map((data, index) => (
+          <tr key={index}>
             {fields.map(field => (
-              <TableCell>{data[field]}</TableCell>
+              <TableCell key={field}>{data[field]}</TableCell>
             ))}
           </tr>
         ))}
