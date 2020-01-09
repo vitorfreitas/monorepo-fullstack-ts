@@ -1,5 +1,6 @@
 import { connect, disconnect } from '../../../test/database'
-import { createBeer } from './resolvers'
+import { createBeer, updateBeer } from './resolvers'
+import { generateBeer, removeBeers, beer } from '../../../test/helpers'
 
 describe('Create Beer', () => {
   beforeAll(connect)
@@ -48,6 +49,35 @@ describe('Create Beer', () => {
     await createBeer(ctx)
 
     expect(ctx.body.message).toBe('Error creating a new beer. Try again later')
+    done()
+  })
+})
+
+describe('Update Beer', () => {
+  beforeAll(connect)
+  afterAll(disconnect)
+
+  beforeEach(generateBeer)
+  afterEach(removeBeers)
+
+  test('should update a given beer data', async done => {
+    const ctx = {
+      params: {
+        id: beer._id
+      },
+      request: {
+        body: {
+          name: 'Eisenbahn'
+        }
+      },
+      body: {
+        message: null
+      }
+    }
+
+    await updateBeer(ctx)
+
+    expect(ctx.body.message).toBe('Beer successfully updated')
     done()
   })
 })
