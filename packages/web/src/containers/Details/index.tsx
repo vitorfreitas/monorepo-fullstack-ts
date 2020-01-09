@@ -1,28 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import Header from 'components/Header'
 import { IBeer } from '@entria/shared/interfaces/beer'
+import Header from 'components/Header'
+import InfoTable from 'components/Header/InfoTable'
 
 interface Props {
   beer: IBeer
 }
 
-const InformationsList = styled.ul`
-  list-style: none;
-`
-
-const Information = styled.li`
-  font-size: 2.25rem;
-  text-align: center;
-
-  &:not(:last-of-type) {
-    margin-bottom: 1rem;
-  }
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const BeerImage = styled.img`
   width: 10rem;
-  display: block;
   margin: 2rem auto;
 `
 
@@ -39,14 +32,11 @@ const DetailsContainer: React.FC<Props> = ({ beer }) => {
     <article>
       <Header title={beer.name} />
 
-      <BeerImage src={beer.picture} />
+      <Content>
+        <BeerImage src={beer.picture} />
 
-      <InformationsList>
-        {keys.map((key: string) => (
-          // @ts-ignore
-          <Information key={key}>{`${labels[key]}: ${beer[key]}`}</Information>
-        ))}
-      </InformationsList>
+        <InfoTable fields={keys} labels={labels} dataSource={[beer]} />
+      </Content>
     </article>
   )
 }
