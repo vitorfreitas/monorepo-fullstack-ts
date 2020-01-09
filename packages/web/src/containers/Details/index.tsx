@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { IBeer } from '@entria/shared/interfaces/beer'
 import Header from 'components/Header'
-import InfoTable from 'components/Header/InfoTable'
+import InfoTable from 'components/InfoTable'
 
 interface Props {
   beer: IBeer
