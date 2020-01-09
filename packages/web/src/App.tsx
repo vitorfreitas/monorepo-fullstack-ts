@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import PagesRouter from './pages'
-import GlobalStyles from './global'
+import GlobalStyles from './globalStyles'
 
 const App: React.FC = () => {
   return (
