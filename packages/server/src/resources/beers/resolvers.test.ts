@@ -30,27 +30,6 @@ describe('Create Beer', () => {
     expect(ctx.body.message).toBe('Beer successfully registered')
     done()
   })
-
-  test('should return an error when the beer is invalid', async done => {
-    const beer = {
-      name: 'Heineken',
-      ibu: 1.9
-    }
-
-    const ctx = {
-      body: {
-        message: ''
-      },
-      request: {
-        body: beer
-      }
-    }
-
-    await createBeer(ctx)
-
-    expect(ctx.body.message).toBe('Error creating a new beer. Try again later')
-    done()
-  })
 })
 
 describe('Update Beer', () => {
