@@ -6,7 +6,8 @@ const error = async (ctx, next) => {
 
     const errorStatus = {
       Error: 422,
-      AuthenticationError: 401
+      AuthenticationError: 401,
+      ValidationError: 401
     }
 
     if (!err.name) {
