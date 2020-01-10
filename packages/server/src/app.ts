@@ -1,6 +1,7 @@
 import * as Koa from 'koa'
 import * as bodyParser from 'koa-body'
 import * as cors from '@koa/cors'
+import rootRoutes from './routes'
 import beerRoutes from './resources/beers/routes'
 
 // Middlewares
@@ -9,7 +10,7 @@ app.use(bodyParser())
 app.use(cors())
 
 // Routes
-const routes = [beerRoutes]
+const routes = [rootRoutes, beerRoutes]
 routes.forEach(route => {
   app.use(route.routes())
   app.use(route.allowedMethods())
